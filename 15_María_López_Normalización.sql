@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2021 a las 17:11:19
+-- Tiempo de generación: 21-05-2021 a las 17:45:53
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -32,6 +32,16 @@ CREATE TABLE `tbl_direcciones` (
   `DIRECCIÓN` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `tbl_direcciones`
+--
+
+INSERT INTO `tbl_direcciones` (`ID_DIRECCIÓN`, `DIRECCIÓN`) VALUES
+(1, 'Barrio Torondón'),
+(2, 'Colonia Casa Blanca'),
+(3, 'Barrio Cabañas'),
+(4, 'Colonia Lomas del Río');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +54,13 @@ CREATE TABLE `tbl_envíos` (
   `FECHA` date NOT NULL,
   `ID_DIRECCION` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tbl_envíos`
+--
+
+INSERT INTO `tbl_envíos` (`ID_ENVÍO`, `DESCRIPCIÓN_ENVÍO`, `FECHA`, `ID_DIRECCION`) VALUES
+(1, 'Envío de una pizza con peperoni', '2021-05-21', 4);
 
 -- --------------------------------------------------------
 
@@ -130,13 +147,13 @@ ALTER TABLE `tbl_pedidos`
 -- AUTO_INCREMENT de la tabla `tbl_direcciones`
 --
 ALTER TABLE `tbl_direcciones`
-  MODIFY `ID_DIRECCIÓN` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_DIRECCIÓN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_envíos`
 --
 ALTER TABLE `tbl_envíos`
-  MODIFY `ID_ENVÍO` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_ENVÍO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_facturas`
